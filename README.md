@@ -8,6 +8,8 @@ yes
 
 3) What is the difference between navigation and snapshot mode?
 
+The difference between the two is in the way they analyze a page.
+
 Navigation mode analyzes a page right after it loads and provides an overall performance metric, but can't analyze interactions or changes in content.
 
 Snapshot mode analyzes a page in its current state and is used for finding accessibility issues. However, it can't analyze JS performance or changes to the DOM tree.
