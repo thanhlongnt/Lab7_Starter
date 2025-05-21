@@ -1,3 +1,5 @@
+Thanh-Long Nguyen-Trong
+
 1) Where would you fit your automated tests in your Recipe project development pipeline? Select one of the following and explain why.
 
 Within a Github action that runs whenever code is pushed: These tests would be automatically run when prs are made before merging. 
