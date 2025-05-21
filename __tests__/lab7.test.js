@@ -28,18 +28,18 @@ describe('Basic user flow for Website', () => {
     let allArePopulated = true;
 
     // Query select all of the <product-item> elements
-    const prodItemsData = await page.$$eval('product-item', prodItems => {
+    const prodItems = await page.$$eval('product-item', prodItems => {
       return prodItems.map(item => {
         // Grab all of the json data stored inside
         return data = item.data;
       });
     });
 
-    for (let i = 0; i < prodItemsData.length; i++){
-      console.log(`Checking product item ${i}/${prodItemsData.length}`);
+    for (let i = 0; i < prodItems.length; i++){
+      console.log(`Checking product item ${i}/${prodItems.length}`);
 
       // Make sure the title, price, and image are populated in the JSON
-      firstValue = prodItemsData[i];
+      firstValue = prodItems[i];
       if (firstValue.title.length == 0) { allArePopulated = false; }
       if (firstValue.price.length == 0) { allArePopulated = false; }
       if (firstValue.image.length == 0) { allArePopulated = false; }
@@ -131,7 +131,7 @@ describe('Basic user flow for Website', () => {
      * Remember to remove the .skip from this it once you are finished writing this test.
      */
 
-    await page.reload({ waitUntil: ['networkidle0', 'domcontentloaded'] });
+    await page.reload();
 
     let productItems = await page.$$('product-item');
 
@@ -211,7 +211,7 @@ describe('Basic user flow for Website', () => {
      * Remember to remove the .skip from this it once you are finished writing this test.
      */
 
-    await page.reload({ waitUntil: ['networkidle0', 'domcontentloaded'] });
+    await page.reload();
 
     let productItems = await page.$$('product-item');
 
